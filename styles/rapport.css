@@ -13,6 +13,7 @@
     --gris: #929292;
 }
 
+/* Menu Burger */
 label, #toggle {
     display: none;
 }
@@ -23,7 +24,6 @@ body {
 }
 
 /* NavBar */
-
 .navbar {
     display: flex;
     align-items: center;
@@ -201,6 +201,7 @@ label, #toggle:checked ~ .menu{
     z-index: 3;
     height: 250px;
 }
+
 /* Contenaire Intro - Conceptions & Design */
 .conteneur-intro{  
     width: 80%;

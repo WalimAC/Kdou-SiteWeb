@@ -10,6 +10,7 @@
     --white: white;
 }
 
+/* Menu Burger */
 label, #toggle {
     display: none;
 }
@@ -128,7 +129,6 @@ body {
 }
 
 /* Footer */
-
 .conteneur-footer {
     display: flex;
     align-items: center;
@@ -164,7 +164,6 @@ body {
 /* Responsive */
 @media all and (max-width: 991px){
 
-
 /* Menu Burger */
 .menu {
     display: none;
@@ -183,6 +182,7 @@ label, #toggle:checked ~ .menu{
     z-index: 3;
     height: 250px;
 }
+
 /* Contenaire bilan */
 .conteneur-bilan{  
     width: 80%;
@@ -190,7 +190,6 @@ label, #toggle:checked ~ .menu{
 }
 
 /* Responsive Footer */
-
 .conteneur-footer {
     display: flex;
     flex-direction: column;

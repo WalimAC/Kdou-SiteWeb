@@ -12,6 +12,7 @@
     --black: black;
 }
 
+/* Menu Burger */
 label, #toggle {
     display: none;
 }
@@ -344,6 +345,7 @@ label, #toggle:checked ~ .menu{
 
 
 /* Responsive qui sommes nous*/
+
 .conteneur-groupe {
     width: 100%;
     height: 100%;

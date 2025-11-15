@@ -10,6 +10,7 @@
     --white: white;
 }
 
+/* Menu Burger */
 label, #toggle {
     display: none;
 }
@@ -206,8 +207,9 @@ body {
     color: var(--btn_color);
 }
 
-@media all and (max-width: 991px){
+/* Responsive */
 
+@media all and (max-width: 991px){
 
 /* Menu Burger */
 .menu {
@@ -227,8 +229,8 @@ label, #toggle:checked ~ .menu{
     z-index: 3;
     height: 250px;
 }
-/* Contenaire Contexte */
 
+/* Contenaire Contexte */
 .conteneur-contexte{
     width: 80%;
     height: 100%;
