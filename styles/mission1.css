@@ -10,10 +10,16 @@
     --white: white;
 }
 
+label, #toggle {
+    display: none;
+}
+
 body {
     background-color: var(--background);
     margin: 0;
 }
+
+/* NavBar */
 
 .navbar {
     display: flex;
@@ -57,7 +63,6 @@ body {
     border-radius: 24px;
     width: 180px;
     height: 45px;
-    /* Taille nav  - Taille bordure */
     border: 2px solid var(--btn_color);
 }
 
@@ -76,6 +81,8 @@ body {
 .btn a:hover {
     color: var(--text_color_white);
 }
+
+/* Partie Contexte */
 
 .contexte {
     display: flex;
@@ -112,6 +119,8 @@ body {
     font-size: 20px;
 }
 
+/* Partie Billan */
+
 .bilan-mission-text {
     margin: 40px 100px 50px 100px;
 }
@@ -129,6 +138,8 @@ body {
     font-weight: 200;
     font-size: 20px;
 }
+
+/* Partie Amelioration & Conclusion en contenaire */
 
 .bilan-mission-amelioration h1 {
     font-family: "Outfit", sans-serif;
@@ -162,6 +173,8 @@ body {
     width: 30%;
 }
 
+/* Footer */
+
 .conteneur-footer {
     display: flex;
     align-items: center;
@@ -191,4 +204,48 @@ body {
 
 .conteneur-footer a:hover {
     color: var(--btn_color);
+}
+
+@media all and (max-width: 991px){
+
+
+/* Menu Burger */
+.menu {
+    display: none;
+}
+
+label {
+    display: flex;
+    justify-content : center;
+    font-size : 40px;
+    color : var(--black);
+}
+
+label, #toggle:checked ~ .menu{
+    display: flex;
+    flex-direction: column;
+    z-index: 3;
+    height: 250px;
+}
+/* Contenaire Contexte */
+
+.conteneur-contexte{
+    width: 80%;
+    height: 100%;
+}
+
+
+/* Responsive Footer */
+
+.conteneur-footer {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    height: 100%;
+}
+
+.conteneur-footer p {
+    width: 80%;
+}
+
 }

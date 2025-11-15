@@ -12,6 +12,10 @@
     --bleuEmail: #0066cc
 }
 
+label, #toggle {
+    display: none;
+}
+
 body {
     background-color: var(--background);
     margin: 0;
@@ -147,11 +151,9 @@ body {
     margin-top: 20px;
 }
 
-.bilan-mission-indicateur th,
-td {
+.bilan-mission-indicateur th, td {
     border: 1px solid var(--text_color);
     padding: 12px;
-    text-align: left;
 }
 
 .bilan-mission-indicateur th {
@@ -171,10 +173,15 @@ td {
 }
 
 .bilan-mission-indicateur pre {
+    display: flex;
     background-color: var(--white);
     margin-top: 20px;
     border-radius: 20px;
     padding-top: 20px;
+}
+
+#codesql{
+    display: flex;
 }
 
 .conteneur-footer {
@@ -206,4 +213,50 @@ td {
 
 .conteneur-footer a:hover {
     color: var(--btn_color);
+}
+
+/* Responsive */
+
+@media all and (max-width: 991px){
+
+
+/* Menu Burger */
+.menu {
+    display: none;
+}
+
+label {
+    display: flex;
+    justify-content : center;
+    font-size : 40px;
+    color : var(--black);
+}
+
+label, #toggle:checked ~ .menu{
+    display: flex;
+    flex-direction: column;
+    z-index: 3;
+    height: 250px;
+}
+/* Contenaire Contexte */
+
+.conteneur-contexte{
+    width: 80%;
+    height: 100%;
+}
+
+
+/* Responsive Footer */
+
+.conteneur-footer {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    height: 100%;
+}
+
+.conteneur-footer p {
+    width: 80%;
+}
+
 }

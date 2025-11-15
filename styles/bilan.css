@@ -10,10 +10,16 @@
     --white: white;
 }
 
+label, #toggle {
+    display: none;
+}
+
 body {
     background-color: var(--background);
     margin: 0;
 }
+
+/* NavBar */
 
 .navbar {
     display: flex;
@@ -76,12 +82,14 @@ body {
     color: var(--text_color_white);
 }
 
-.contexte {
+/* Partie billan Contenaire */
+
+.bilan {
     display: flex;
     justify-content: center;
 }
 
-.conteneur-conclu {
+.conteneur-bilan {
     width: 900px;
     height: 850px;
     padding-left: 20px;
@@ -91,14 +99,14 @@ body {
     background-color: var(--white);
 }
 
-.conteneur-conclu h1 {
+.conteneur-bilan h1 {
     font-family: "Outfit", sans-serif;
     font-weight: 450;
     font-size: 40px;
     text-align: center;
 }
 
-.conteneur-conclu li {
+.conteneur-bilan li {
     font-family: "Outfit", sans-serif;
     font-weight: 200;
     padding-left: 20px;
@@ -119,6 +127,7 @@ body {
     font-size: 20px;
 }
 
+/* Footer */
 
 .conteneur-footer {
     display: flex;
@@ -149,4 +158,48 @@ body {
 
 .conteneur-footer a:hover {
     color: var(--btn_color);
+}
+
+
+/* Responsive */
+@media all and (max-width: 991px){
+
+
+/* Menu Burger */
+.menu {
+    display: none;
+}
+
+label {
+    display: flex;
+    justify-content : center;
+    font-size : 40px;
+    color : var(--black);
+}
+
+label, #toggle:checked ~ .menu{
+    display: flex;
+    flex-direction: column;
+    z-index: 3;
+    height: 250px;
+}
+/* Contenaire bilan */
+.conteneur-bilan{  
+    width: 80%;
+    height: 100%;
+}
+
+/* Responsive Footer */
+
+.conteneur-footer {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    height: 100%;
+}
+
+.conteneur-footer p {
+    width: 80%;
+}
+
 }
