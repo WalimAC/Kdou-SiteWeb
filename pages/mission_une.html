@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Kdou - Mission</title>
+    <link rel="stylesheet" href="/styles/mission1.css">
+</head>
+
+<body>
+    <header>
+        <nav class="navbar">
+            <div class="logo">
+                <img src="../assets/logo/logo.png" alt="Kdou logo" width="200" height="130">
+            </div>
+
+            <ul class="menu">
+                <li><a href="../index.html">Accueil</a></li>
+                <li><a href="mission_une.html">Mission 1</a></li>
+                <li><a href="mission_deux.html">Mission 2</a></li>
+                <li><a href="mission_trois.html">Mission 3</a></li>
+                <li><a href="bilan.html">Bilan</a></li>
+            </ul>
+
+            <div class="btn"><a href="rapport.html">Rapport Web</a></div>
+        </nav>
+    </header>
+
+
+    <section class="contexte">
+        <div class="conteneur-contexte">
+            <h1>Mission 1</h1>
+            <p id="sub_title">Contexte</p>
+            <p id="description">Durant cette première mission de la SAE de Base de Données nous devions analyser un
+                ensemble de tables de la base de données commerciale de Kdou pour bien comprendre leurs structure, leurs
+                relations et leur cohérence. Nous devions identifier les clés primaires et clés étrangères, repérer
+                d’éventuelles anomalies dans les données (doublons, incohérences, valeurs manquantes, etc...) et
+                proposer des améliorations pour obtenir une base de données fiable, cohérente, exploitable et sans
+                erreur.<br><br>Les tables étudiées étaient les suivantes : <br>Fournisseur - Produit - Catégorie -
+                Clientèle - Commande - DétailCommande</p>
+        </div>
+    </section>
+
+    <section class="bilan-mission">
+        <div class="bilan-mission-text">
+            <h1>Bilan structuré sur l’étude des données</h1>
+            <p>
+                <strong>Analyse de la structure et des relations :</strong>
+                <br>
+
+                Nous avons commencé par identifier les clés primaires et étrangères de chaque table, ce qui nous a
+                permis de comprendre la logique de la base :
+            <ul>
+                <li>Les tables Produit, Commande et Clientèle sont liées par des identifiants communs <em>(ex. :
+                        N°Commande, Code client, Réf produit).</em></li>
+                <li>Les relations entre les entités sont cohérentes et reflètent les liens entre les fournisseurs, les
+                    produits et les clients.</li>
+            </ul>
+            Cette étape a permis de visualiser la structure globale de la base et de repérer les points à surveiller
+            pour assurer l’intégrité des données.
+
+            <br>
+            <br>
+
+            <strong>Étude détaillée des champs :</strong>
+            <br>
+            Chaque table a été examinée en détail :
+            <ul>
+                <li>Fournisseur : informations d’identification (nom, contact, adresse, pays, téléphone).</li>
+                <li>Produit : référence, fournisseur associé, catégorie, coût d’achat, unités en stock.</li>
+                <li>Catégorie : type de produit, description, coefficient de marge.</li>
+                <li>Clientèle : informations de contact, adresse, ville, pays et moyen de communication.</li>
+                <li>Commande / DétailCommande : suivi des achats, quantités, dates, frais de port.</li>
+            </ul>
+            Cette étape nous a permis de comprendre comment chaque donnée contribue à la gestion commerciale de KDou.
+
+            <br>
+            <br>
+
+            <strong>Détection des incohérences et anomalies :</strong>
+            <br>
+            L’analyse a révélé plusieurs problèmes de qualité des données :
+            <ul>
+                <li>Doublons de fournisseurs : par exemple, deux entreprises partageant le même numéro de fournisseur.
+                </li>
+                <li>Incohérences de pays : différences d’écriture (“USA”, “U.S.A.”, “États-Unis”) qui faussent les
+                    recherches.</li>
+                <li>Fautes de saisie : “LILLLE” au lieu de “LILLE”.</li>
+                <li>Champs manquants : adresses ou e-mails de clients, coûts d’achat, unités en stock.</li>
+                <li>Erreurs dans les commandes :
+                    <ul>
+                        <li>Dates “À livrer avant” placées avant la date de commande.</li>
+                        <li>Commandes sans date d’envoi.</li>
+                        <li>Frais de port incohérents (ex. : 0,10 € pour des livraisons internationales).</li>
+                        <li>Code client mal saisi (“FOLK0” au lieu de “FOLKO”), provoquant des réclamations de clients
+                            comme Maria Larsson.</li>
+                    </ul>
+                </li>
+            </ul>
+
+            Ces anomalies peuvent entraîner des erreurs dans les analyses, des retards de traitement et des problèmes de
+            satisfaction client.
+
+            <br>
+            <br>
+
+            <strong>Exemples d’observations</strong>
+            <ul>
+                <li>Certaines commandes de Maria Larsson n’ont pas été traitées à cause d’une erreur dans le code
+                    client.</li>
+                <li>Le produit “linonade citronellanonella” présente une faute dans son nom.</li>
+                <li>Le produit “Vbeer” n’a pas de coût d’achat renseigné.</li>
+                <li>Plusieurs produits ont des stocks vides (valeur NULL).</li>
+            </ul>
+            </p>
+        </div>
+    </section>
+
+    <section class="bilan-mission-amelioration">
+        <h1>Perspectives d’amélioration et conclusion</h1>
+        <div class="bilan-contenaire">
+            <div class="contenaire-amelioration">
+                <p>
+                    Nettoyer et harmoniser les données
+                <ul>
+                    <li>Supprimer les doublons.</li>
+                    <li>Uniformiser les noms de pays, villes et numéros de téléphone.</li>
+                    <li>Corriger les fautes et compléter les champs manquants.</li>
+                </ul>
+                Mettre en place des règles de validation
+                <ul>
+                    <li>Champs obligatoires (adresse, e-mail, coût d’achat).</li>
+                    <li>Listes déroulantes pour les pays et les villes.</li>
+                    <li>Contrôles automatiques sur les dates et les formats.</li>
+                </ul>
+                Utiliser un système de gestion de base de données (SGBD)
+                <ul>
+                    <li>Importer les données sous Access pour mieux définir les clés, relations et contraintes.</li>
+                </ul>
+                Documenter la base
+                <ul>
+                    <li>Créer un dictionnaire de données détaillant chaque champ, son format et sa signification.</li>
+                </ul>
+                </p>
+            </div>
+
+            <div class="contenaire-conclusion">
+                <p>En conclusion, cette première mission nous a permis de comprendre la structure de la base KDou, d’en
+                    identifier les incohérences majeures et de proposer des solutions concrètes pour fiabiliser les
+                    données. Ce travail constitue une base solide pour les prochaines missions, où nous pourrons
+                    exploiter des données plus propres et cohérentes pour appuyer la stratégie éco-responsable et la
+                    rentabilité de l’entreprise.</p>
+            </div>
+        </div>
+    </section>
+
+
+    <footer>
+        <div class="conteneur-footer">
+            <div class="logo">
+                <img src="../assets/logo/logo.png" alt="Kdou logo" width="160" height="110">
+            </div>
+            <p>Ce site internet est un compte rendu, au format page web, pour la ressource R1.02.
+                Il est basé sur la SAE 1.04, dans laquelle nous avions trois missions différentes où nous devions
+                analyser les bases de données de KDOU, à répondre aux questions posées et à réaliser un compte rendu de
+                chacune d’entre elles aux formats PDF et web, ainsi qu’un rapport sur la création de ce site internet.
+            </p>
+            <ul class="menu-footer">
+                <li><strong>Pages :</strong></li>
+                <li><a href="../index.html">Accueil</a></li>
+                <li><a href="mission_une.html">Mission 1</a></li>
+                <li><a href="mission_deux.html">Mission 2</a></li>
+                <li><a href="mission_trois.html">Mission 3</a></li>
+                <li><a href="bilan.html">Bilan</a></li>
+                <li><a href="rapport.html">Rapport Web</a></li>
+            </ul>
+        </div>
+    </footer>
+
+</body>
+
+</html>

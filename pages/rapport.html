@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Kdou - Rapport de Dev</title>
+    <link rel="stylesheet" href="/styles/rapport.css">
+</head>
+
+<body>
+    <header>
+        <nav class="navbar">
+            <div class="logo">
+                <img src="../assets/logo/logo.png" alt="Kdou logo" width="200" height="130">
+            </div>
+
+            <ul class="menu">
+                <li><a href="../index.html">Accueil</a></li>
+                <li><a href="mission_une.html">Mission 1</a></li>
+                <li><a href="mission_deux.html">Mission 2</a></li>
+                <li><a href="mission_trois.html">Mission 3</a></li>
+                <li><a href="bilan.html">Bilan</a></li>
+            </ul>
+
+            <div class="btn"><a href="rapport.html">Rapport Web</a></div>
+        </nav>
+    </header>
+
+
+    <section class="contexte">
+        <div class="conteneur-contexte">
+            <h1>CONCEPTION & DESIGN</h1>
+            <p id="description">
+                Pour la réalisation de ce site web, nous avons commencé par créer à réfléchir à l’organisation, aux
+                couleurs, aux images et à l’expérience utilisateur.
+                <br> <br>
+                Thème général de épicerie KDou :
+                <br>
+                L’entreprise vend des produits alimentaires aux clients français et propose des épices du monde entier
+                provenant de ses fournisseurs. Nous avons choisi des couleurs sable et blanc pour le fond afin de
+                rappeler l’univers de l’épicerie, et un brique doux pour les éléments interactifs ou button.
+                <br> <br>
+                Ambiance et inspirations :
+                <br>
+                Images d’épices et d’aliments pour rappeler l’univers KDou.
+                Sites d’épicerie en ligne et magasins physiques pour s’inspirer de la présentation et de l’ergonomie.
+                Mood cozy et professionnel pour attirer une clientèle prête à investir dans des produits de qualité.
+                Nous avons chercher à comprendre l'univers de l'entreprise afin de correspondre notre design à un
+                univers et un ressentie spécifique
+                de sérénité et de chaleur. Grâce à une expérience de quelques année nous avons réussi à transmetres ce
+                sentiment.
+                Tout cela reste des idées en globale et permet de faire dans un premier temps un design général de ce
+                que l'on vas concevoir. Nous rentrons dans le détails dans la suite de ce rapport.
+
+            </p>
+        </div>
+    </section>
+
+    <section class="orga-site">
+        <div class="orga-site-text">
+            <h1>ORGANISATION DU SITE</h1>
+            <p>
+                <strong>Comprendre le sujet et les attentes :</strong>
+                <br>
+                <br>
+                En lisant le sujet, on a compartimenté les attentes en 5 blocs.
+                <br> <br>
+                Le premier, celui des présentations. Dans cette partie, on sait qu’on doit se présenter, présenter
+                l’entreprise et l’objectif de nos missions, ainsi on regroupe ces éléments en une page qui est ni plus
+                ni moins que l’accueil.
+                <br> <br>
+                Nous devions présenter les missions demandées 1, 2 et 3 avec chacune leurs spécificités, soit 1 page par
+                mission, donc 3 pages.
+                Un bilan est également demandé pour l’entreprise, donc une autre page dédiée au bilan.
+                <br> <br>
+                Et pour finir, une page qui est un rapport de développement de ce site web. Cette page ayant un contenu
+                différent du site global et permettant de comprendre comment ce site a été conçu, elle se doit d’être
+                distincte.
+                <br> <br>
+                Pour terminer, notre projet doit inclure un footer qui doit être présent sur toutes les pages.
+            </p>
+
+            <p>
+                <strong>L'architecture du site / Fichier de code :</strong>
+                <br><br>
+                Maintenant que l’on a bien structuré le site pour une bonne navigation, désormais il nous faut coder le
+                site.<br><br>
+                Pour cela, il faut réfléchir à la façon dont nous allons organiser les fichiers. Nous savons que nous
+                aurons 6 pages, nous créons donc un dossier pages dans lequel nous pourrons retrouver toutes les pages
+                du site.<br><br>
+                Chaque page a un style. Nous pourrions faire un fichier unique style.css, mais cela entraînerait
+                beaucoup plus de chaos, un manque de structuration, et pour maintenir le site ce ne serait pas optimal.
+                Si l’on souhaite modifier tout le style d’une page, nous ne pourrions pas le faire sans en affecter une
+                autre.<br><br>
+                Ainsi, nous avons fait le choix de créer pour chaque page une feuille de style, soit 6 feuilles de
+                style. Avec la même logique, nous faisons un dossier styles contenant tous les styles de chaque
+                page.<br><br>
+                Nous savons que nous aurons des images, des logos ainsi que des avatars pour nous présenter. Nous
+                regroupons alors toutes ces images dans un dossier que l’on nomme assets. Mais dans ce cas, nous serions
+                dans un dossier non structuré et on ne s’y retrouverait plus.<br><br>
+                Donc nous compartimentons chaque média en fonction de sa fonction : si c’est un logo, une illustration
+                pour ajouter de la profondeur à notre site, ou bien un avatar pour nous présenter. Nous nous retrouvons
+                donc avec trois autres dossiers : avatars, illustrations, logos.<br><br>
+            </p>
+
+            <p>
+                <strong>Design de chaque pages</strong>
+                <br><br>
+                Désormais, nous avons l’architecture du site. Pour chacune des pages, nous avons suivi le contenu que
+                nous devions renseigner et nous avons adapté notre design à ce contenu. Avant de passer au code, nous
+                avons designé notre projet sur feuille pour avoir une idée de ce que l’on allait concevoir.<br><br>
+                Pour chaque page, nous avons opté pour un style chaud et pour un visuel qui guide bien le visiteur vers
+                ce qui est essentiel, tout en compartimentant les sections afin de faciliter la compréhension de la
+                navigation du site.<br><br>
+                Pour la page d’accueil, c’est une présentation de KDou avec une image d’épices, une partie pour nous
+                présenter, une partie pour expliquer notre mission et une autre partie pour découvrir nos missions. Pour
+                chacune de ces parties, un design a été fait pour bien les différencier, avec l’ajout de logos et
+                d’images pour illustrer tout cela.
+                Un footer simple et une navbar contenant les liens vers les autres pages, ainsi qu’un bouton permettant
+                de distinguer la navigation du site classique et le rapport web. L’objectif est vraiment de plonger le
+                visiteur dans l’univers de KDou et d’y sentir une ambiance chaleureuse.<br><br>
+                Pour les missions, nous avions pas mal de texte, donc pour ne pas ennuyer le visiteur et continuer à
+                l’immerger dans l’univers de KDou malgré des contenus plus ponctuels et plus froids, nous avons choisi
+                de distinguer le contexte du contenu principal de la mission afin qu’il puisse se repérer facilement,
+                tout en guidant son regard sans qu’il ne s’en rende compte.
+                Notamment pour la mission 1, où nous avions beaucoup de texte : nous avons varié les styles, et pour
+                éviter une redondance des blocs de contenu, nous avons changé leur disposition, notamment dans la
+                conclusion.
+                Nous avons gardé cette même structure pour toutes les missions, en adaptant le design à chacune (ajout
+                de tableaux pour les résultats, de conteneurs pour le code SQL, etc.).<br><br>
+                Pour la page du rapport de développement, notre objectif était qu’elle se distingue des autres pages
+                grâce à un style un peu plus brutaliste, avec une autre police d’écriture et un changement de couleurs,
+                afin d’installer une nouvelle narration.<br><br>
+
+            </p>
+        </div>
+    </section>
+
+
+    <footer>
+        <div class="conteneur-footer">
+            <div class="logo">
+                <img src="../assets/logo/logo.png" alt="Kdou logo" width="160" height="110">
+            </div>
+            <p>Ce site internet est un compte rendu, au format page web, pour la ressource R1.02.
+                Il est basé sur la SAE 1.04, dans laquelle nous avions trois missions différentes où nous devions
+                analyser les bases de données de KDOU, à répondre aux questions posées et à réaliser un compte rendu de
+                chacune d’entre elles aux formats PDF et web, ainsi qu’un rapport sur la création de ce site internet.
+            </p>
+            <ul class="menu-footer">
+                <li><strong>Pages :</strong></li>
+                <li><a href="../index.html">Accueil</a></li>
+                <li><a href="mission_une.html">Mission 1</a></li>
+                <li><a href="mission_deux.html">Mission 2</a></li>
+                <li><a href="mission_trois.html">Mission 3</a></li>
+                <li><a href="bilan.html">Bilan</a></li>
+                <li><a href="rapport.html">Rapport Web</a></li>
+            </ul>
+        </div>
+    </footer>
+
+</body>
+
+</html>

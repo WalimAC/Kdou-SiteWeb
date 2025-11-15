@@ -1,0 +1,283 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap');
+
+:root {
+    --background: #F6EDD9;
+    --background-footer: #EAE2CF;
+    --nav_color: #FFFFFF;
+    --text_color: #000000;
+    --text_color_white: #FFFFFF;
+    --btn_color: #C57B57;
+    --gris_color: #D9D9D9;
+    --white: white;
+    --black: black;
+}
+
+body {
+    background-color: var(--background);
+    margin: 0;
+}
+
+.navbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 40px;
+}
+
+
+.menu {
+    display: flex;
+    background-color: rgba(255, 255, 255, 0.6);
+    border-radius: 20px;
+    width: 500px;
+    height: 50px;
+    gap: 25px;
+    align-items: center;
+}
+
+.menu li {
+    list-style: none;
+}
+
+.menu a {
+    font-family: "Outfit", sans-serif;
+    font-size: 20px;
+    font-weight: 400;
+    color: var(--text_color);
+    text-decoration: none;
+}
+
+.menu a:hover {
+    color: var(--btn_color);
+}
+
+.btn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--background);
+    border-radius: 24px;
+    width: 180px;
+    height: 45px;
+    /* Taille nav  - Taille bordure */
+    border: 2px solid var(--btn_color);
+}
+
+.btn a {
+    font-family: "Outfit", sans-serif;
+    font-size: 20px;
+    font-weight: 400;
+    color: var(--btn_color);
+    text-decoration: none;
+}
+
+.btn:hover {
+    background-color: var(--btn_color);
+}
+
+.btn a:hover {
+    color: var(--text_color_white);
+}
+
+.introduction {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.conteneur-intro {
+    display: flex;
+    align-items: center;
+    position: relative;
+    width: 1200px;
+    height: 600px;
+}
+
+.conteneur-intro img {
+    width: 100%;
+    height: 100%;
+    border-radius: 70px;
+}
+
+.conteneur-intro-text {
+    position: absolute;
+    z-index: 2;
+    background-color: rgba(255, 245, 222, 0.9);
+    border-radius: 34px;
+    width: 600px;
+    height: 300px;
+    margin-left: 25px;
+}
+
+.conteneur-intro-text h1 {
+    text-align: center;
+    font-family: "Outfit", sans-serif;
+    font-size: 35px;
+    font-weight: 600;
+}
+
+.conteneur-intro-text p {
+    font-family: "Outfit", sans-serif;
+    font-weight: 200;
+    padding-left: 20px;
+    font-size: 20px;
+}
+
+.conteneur-groupe {
+    background-color: var(--white);
+    width: 100vw;
+    height: 600px;
+    margin-top: 50px;
+    padding-top: 5px;
+}
+
+.conteneur-groupe h1 {
+    font-family: "Outfit", sans-serif;
+    font-weight: 450;
+    font-size: 40px;
+    text-align: center;
+}
+
+.groupe-info {
+    display: flex;
+    justify-content: center;
+    gap: 6rem;
+    margin-top: 6rem;
+}
+
+.cercle img {
+    border-radius: 100%;
+}
+
+.cercle p {
+    font-family: "Outfit", sans-serif;
+    font-weight: 200;
+    padding-left: 20px;
+    font-size: 20px;
+    text-align: center;
+}
+
+
+.conteneur-mission {
+    margin: 40px 100px 50px 100px;
+}
+
+.conteneur-mission h1 {
+    font-family: "Outfit", sans-serif;
+    font-weight: 450;
+    font-size: 40px;
+    margin-bottom: 50px;
+    text-align: center;
+}
+
+.conteneur-mission-text {
+    font-family: "Outfit", sans-serif;
+    font-weight: 200;
+    font-size: 20px;
+}
+
+.decouvrir {
+    display: flex;
+    justify-content: center;
+}
+
+.conteneur-decouvrir {
+    /* display: flex;
+    flex-direction: column;
+    justify-content: center;           Soit utiliser sa pour centrer le carrer gris mais h1 est centrer ou bien padding sur le gris 20px
+    align-items: center; */
+    background-color: var(--white);
+    width: 1300px;
+    height: 500px;
+    border-radius: 50px;
+    margin-bottom: 100px;
+}
+
+.conteneur-decouvrir h1 {
+    font-family: "Outfit", sans-serif;
+    font-weight: 450;
+    font-size: 40px;
+    padding-left: 40px;
+}
+
+.conteneur-liens {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 50px;
+    background-color: var(--gris_color);
+    width: 1100px;
+    height: 300px;
+    border-radius: 35px;
+    margin: 0 auto;
+}
+
+.btn-decouverte {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--gris_color);
+    border-radius: 24px;
+    width: 180px;
+    height: 45px;
+    /* Taille nav  - Taille bordure */
+    border: 2px solid var(--black);
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.btn-decouverte a {
+    font-family: "Outfit", sans-serif;
+    font-size: 20px;
+    font-weight: 400;
+    color: var(--black);
+    text-decoration: none;
+}
+
+.conteneur-decouvrir p {
+    font-family: "Outfit", sans-serif;
+    font-weight: 200;
+    padding-left: 20px;
+    font-size: 20px;
+    text-align: center;
+}
+
+.conteneur-decouvrir a {
+    text-decoration: solid var(--black);
+    color: var(--black);
+}
+
+.conteneur-decouvrir p>a:hover {
+    color: var(--btn_color);
+}
+
+.conteneur-footer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 150px;
+    width: 100%;
+    height: 250px;
+    background-color: var(--background-footer);
+    font-family: "Outfit", sans-serif;
+    font-weight: 200;
+    border-radius: 50px 50px 0 0;
+    font-size: 17px;
+}
+
+.conteneur-footer p {
+    width: 500px;
+}
+
+.conteneur-footer li {
+    list-style: none;
+}
+
+.conteneur-footer a {
+    text-decoration: none;
+    color: var(--text_color);
+}
+
+.conteneur-footer a:hover {
+    color: var(--btn_color);
+}

@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Kdou - Mission</title>
+    <link rel="stylesheet" href="/styles/mission3.css">
+</head>
+
+<body>
+    <header>
+        <nav class="navbar">
+            <div class="logo">
+                <img src="../assets/logo/logo.png" alt="Kdou logo" width="200" height="130">
+            </div>
+
+            <ul class="menu">
+                <li><a href="../index.html">Accueil</a></li>
+                <li><a href="mission_une.html">Mission 1</a></li>
+                <li><a href="mission_deux.html">Mission 2</a></li>
+                <li><a href="mission_trois.html">Mission 3</a></li>
+                <li><a href="bilan.html">Bilan</a></li>
+            </ul>
+
+            <div class="btn"><a href="rapport.html">Rapport Web</a></div>
+        </nav>
+    </header>
+
+
+    <section class="contexte">
+        <div class="conteneur-contexte">
+            <h1>Mission 3</h1>
+            <p id="sub_title">Contexte</p>
+            <p id="description">
+                Lors de cette troisième mission, notre objectif était d’exploiter la nouvelle version de la base de
+                données de KDou afin de produire des indicateurs pertinents pour l’entreprise.
+                Nous avons utilisé SQL pour analyser les données et créer des indicateurs utiles à la prise de décision
+                de KDou.
+                La base intègre désormais :
+            <ul>
+                <li>La mise en relation des clients proches pour optimiser les livraisons groupées.</li>
+                <li>Une table des pays des fournisseurs pour gérer l’origine des produits.</li>
+                <li>Le calcul du prix de vente à partir du coût fournisseur et d’un coefficient de marge propre à chaque
+                    catégorie.</li>
+            </ul>
+            </p>
+        </div>
+    </section>
+
+    <section class="bilan-mission">
+        <!-- Indicateur 1 -->
+        <div class="bilan-mission-indicateur">
+            <h1 id="h1-text">Présentation d’indicateurs intéressants</h1>
+            <p>
+                <strong>Indicateur ( Leonardo ): Chiffre d’affaires par catégorie « Desserts » et « Boissons » par
+                    année</strong>
+                <br>
+                <br>
+                Calculer le chiffre d’affaires généré par KDou pour les catégories desserts et boissons par année.
+                La requête montre le chiffre d’affaires annuel pour les desserts et boissons.
+                Ce qui permet pour kdou de suivre les ventes liées à la santé et aux tendances alimentaires. KDou peut
+                ainsi identifier les catégories performantes et ajuster sa stratégie marketing ou son offre produit.
+            </p>
+
+            <table>
+                <thead>
+                    <tr>
+                        <th>Année</th>
+                        <th>Catégorie</th>
+                        <th>Chiffre d'affaires</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr class="annee-2020">
+                        <td>2020</td>
+                        <td class="categorie">Boissons</td>
+                        <td class="chiffre-affaire">122 127,76 €</td>
+                    </tr>
+                    <tr class="annee-2021">
+                        <td>2021</td>
+                        <td class="categorie">Boissons</td>
+                        <td class="chiffre-affaire">982 013,77 €</td>
+                    </tr>
+                    <tr class="annee-2022">
+                        <td>2022</td>
+                        <td class="categorie">Boissons</td>
+                        <td class="chiffre-affaire">437,50 €</td>
+                    </tr>
+                    <tr class="annee-2020">
+                        <td>2020</td>
+                        <td class="categorie">Desserts</td>
+                        <td class="chiffre-affaire">57 553,06 €</td>
+                    </tr>
+                    <tr class="annee-2021">
+                        <td>2021</td>
+                        <td class="categorie">Desserts</td>
+                        <td class="chiffre-affaire">513 394,14 €</td>
+                    </tr>
+                    <tr class="annee-2022">
+                        <td>2022</td>
+                        <td class="categorie">Desserts</td>
+                        <td class="chiffre-affaire">1 118,32 €</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <p>
+                <strong>Code SQL : </strong>
+            <pre>
+                    SELECT YEAR(CO.DateCde) AS Annee, CA.NomCateg, 
+                        Round(Sum(DC.Quantité * (PR.CoutAchat * CA.CoefMarge)
+                            *(1 - DC.[Remise (%)]/100)),3) 
+                                AS ChiffreAffaire
+                    FROM Categorie AS CA
+                    INNER JOIN (produit AS PR 
+                                INNER JOIN (detailcommande AS DC 
+                                            INNER JOIN commande AS CO 
+                                            ON DC.N°Commande = CO.N°Commande) 
+                                ON PR.RefProduit = DC.RefProduit) 
+                    ON CA.CodeCateg=PR.CodeCateg
+                    WHERE CA.NomCateg In ("Desserts","Boissons")
+                    GROUP BY YEAR(CO.DateCde), CA.NomCateg
+                    ORDER BY CA.NomCateg;
+                    </pre>
+            </p>
+        </div>
+
+        <!-- Indicateur 2 -->
+        <div class="bilan-mission-indicateur">
+            <p>
+                <strong>Indicateur ( Hadja ) : Nombre de produits carnés non commandés</strong>
+                <br>
+                <br>
+                Identifier le nombre de produits à base de viande qui n’ont pas été commandés.
+                La requête affiche le nombre de produits carnés jamais commandés.
+                Ce qui permet à KDou d’optimiser son offre en identifiant les produits peu attractifs, réduisant les
+                stocks inutiles et améliorant la rentabilité.
+            </p>
+
+            <table>
+                <thead>
+                    <tr>
+                        <th>ProduitCarneNonCommandes</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>2</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <p>
+                <strong>Code SQL :</strong>
+            <pre>
+                        SELECT COUNT(*) AS ProduitCarneNonCommandes
+                        FROM (Categorie C INNER JOIN Produit P ON C.CodeCateg = P.CodeCateg) 
+                        LEFT JOIN DetailCommande DC ON DC.Refproduit = P.Refproduit
+                        WHERE DC.Refproduit IS NULL AND C.NomCateg LIKE "*Viandes*";
+                    </pre>
+            </p>
+        </div>
+
+        <!-- Indicateur 3 -->
+        <div class="bilan-mission-indicateur">
+            <p>
+                <strong>Indicateur ( Victor ) : Chiffre d’affaires total avec fournisseurs hors UE</strong>
+                <br>
+                <br>
+                Calculer le chiffre d’affaires généré avec les fournisseurs situés hors Union Européenne.
+                La requête indique le chiffre d’affaires généré par les fournisseurs hors UE.
+                Ce qui permet à KDou de mesurer l’exposition internationale et de mieux gérer ses partenariats
+                fournisseurs, tout en optimisant les coûts et la négociation des prix.
+            </p>
+
+            <table>
+                <thead>
+                    <tr>
+                        <th>CA_Hors_UE</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>2373341.76</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <p>
+                <strong>Code SQL : </strong>
+            <pre>
+                        SELECT Sum(dc.Quantité * (p.CoutAchat * C.CoefMarge) * (1 - dc.[Remise (%)]/100))
+                            AS CA_Hors_UE
+                        FROM Pays AS pa 
+                        INNER JOIN (Fournisseur AS f 
+                                    INNER JOIN ((DetailCommande AS dc 
+                                                INNER JOIN Produit AS p ON dc.Refproduit = p.Refproduit) 
+                                            INNER JOIN Categorie AS C ON p.CodeCateg = C.CodeCateg) 
+                                    ON f.N°_fournisseur = p.N°_fournisseur) 
+                        ON pa.NoPays = f.NoPays
+                        WHERE pa.UE LIKE "Hors";
+                        </pre>
+            </p>
+        </div>
+
+        <!-- Indicateur 4 -->
+        <div class="bilan-mission-indicateur">
+            <p>
+                <strong>Indicateur ( Walim ): Comparaison commandes clients pilotes et partenaires</strong>
+                <br>
+                <br>
+                Identifier si des clients pilotes d’un réseau ont autant de commandes que leurs clients partenaires.
+                La requête liste les clients pilotes et partenaires ayant un nombre de commandes équivalent.
+                Ce qui permet à KDou de vérifier l’efficacité des partenariats clients et d’ajuster la stratégie de
+                livraison groupée pour optimiser les opérations logistiques.
+            </p>
+
+            <table>
+                <thead>
+                    <tr>
+                        <th>CA_Hors_UE</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>2373341.76</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <p>
+                <strong>Code SQL : </strong>
+            <pre>
+                            SELECT partenaire.CodeCli AS CodePartenaire, 
+                                partenaire.Societe AS NomPartenaire,
+                            CommandeClientPartenaireTot.NbrCommandesTotales AS NbrCommandePartenaire,
+                            pilote.CodeCli AS CodePilote, pilote.Societe AS NomPilote,
+                            CommandeClientPiloteTot.NbrCommandesTotales AS NbrCommandePilote
+                            FROM ((Clientele AS partenaire INNER JOIN Clientele 
+                                AS pilote ON partenaire.CodeCliPart = pilote.CodeCli) 
+                            LEFT JOIN ( SELECT Commande.CodeCli, COUNT([N°commande]) 
+                                AS NbrCommandesTotales FROM Commande GROUP BY Commande.CodeCli) 
+                                AS CommandeClientPartenaireTot 
+                                    ON partenaire.CodeCli = CommandeClientPartenaireTot.CodeCli) 
+                            LEFT JOIN (SELECT Commande.CodeCli, COUNT([N°commande]) 
+                                AS NbrCommandesTotales FROM Commande GROUP BY Commande.CodeCli) 
+                                AS CommandeClientPiloteTot ON pilote.CodeCli 
+                                    = CommandeClientPiloteTot.CodeCli
+                            WHERE partenaire.CodeCliPart IS NOT NULL 
+                            AND CommandeClientPartenaireTot.NbrCommandesTotales 
+                                = CommandeClientPiloteTot.NbrCommandesTotales;
+                    </pre>
+            </p>
+        </div>
+
+    </section>
+
+
+    <footer>
+        <div class="conteneur-footer">
+            <div class="logo">
+                <img src="../assets/logo/logo.png" alt="Kdou logo" width="160" height="110">
+            </div>
+            <p>Ce site internet est un compte rendu, au format page web, pour la ressource R1.02.
+                Il est basé sur la SAE 1.04, dans laquelle nous avions trois missions différentes où nous devions
+                analyser les bases de données de KDOU, à répondre aux questions posées et à réaliser un compte rendu de
+                chacune d’entre elles aux formats PDF et web, ainsi qu’un rapport sur la création de ce site internet.
+            </p>
+            <ul class="menu-footer">
+                <li><strong>Pages :</strong></li>
+                <li><a href="../index.html">Accueil</a></li>
+                <li><a href="mission_une.html">Mission 1</a></li>
+                <li><a href="mission_deux.html">Mission 2</a></li>
+                <li><a href="mission_trois.html">Mission 3</a></li>
+                <li><a href="bilan.html">Bilan</a></li>
+                <li><a href="rapport.html">Rapport Web</a></li>
+            </ul>
+        </div>
+    </footer>
+
+</body>
+
+</html>

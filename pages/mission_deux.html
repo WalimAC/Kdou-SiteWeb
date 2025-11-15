@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Kdou - Mission</title>
+    <link rel="stylesheet" href="/styles/mission2.css">
+</head>
+
+<body>
+    <header>
+        <nav class="navbar">
+            <div class="logo">
+                <img src="../assets/logo/logo.png" alt="Kdou logo" width="200" height="130">
+            </div>
+
+            <ul class="menu">
+                <li><a href="../index.html">Accueil</a></li>
+                <li><a href="mission_une.html">Mission 1</a></li>
+                <li><a href="mission_deux.html">Mission 2</a></li>
+                <li><a href="mission_trois.html">Mission 3</a></li>
+                <li><a href="bilan.html">Bilan</a></li>
+            </ul>
+
+            <div class="btn"><a href="rapport.html">Rapport Web</a></div>
+        </nav>
+    </header>
+
+
+    <section class="contexte">
+        <div class="conteneur-contexte">
+            <h1>Mission 2</h1>
+            <p id="sub_title">Contexte</p>
+            <p id="description">Dans cette deuxième mission de la SAE 1.04, nous avons poursuivi notre travail sur la
+                base de données de l’entreprise KDou, cette fois à travers une exploitation dans Microsoft Access, un
+                outil Low Code permettant de manipuler et d’interroger plus facilement la base.
+                L’objectif était de produire différents indicateurs à partir de requêtes SQL ou en utilisant le mode
+                graphique QBE (Query By Example).
+                <br> <br>Nous avons ainsi pu extraire des informations pertinentes sur les clients, les fournisseurs,
+                les produits et les commandes, tout en testant la cohérence des données et la qualité des relations
+                entre les tables.
+            </p>
+        </div>
+    </section>
+
+    <section class="bilan-mission">
+        <div class="bilan-mission-text">
+            <h1>Présentation d’indicateurs intéressants</h1>
+            <p>
+                <strong>Indicateur : Clients sans commande</strong>
+                <br>
+                <br>
+                Cet indicateur permet d’identifier les clients enregistrés dans la base, mais qui n’ont encore passé
+                aucune commande.
+                Cela peut aider KDou à cibler des actions de relance commerciale par e-mail ou à comprendre pourquoi
+                certains clients sont inactifs.
+                Vous trouvez le code sql de cette indicateur ci-desssus.
+                <br> <br>
+                <strong>Résultat :</strong>
+                La requête affiche la liste des clients sans commande, avec leur nom, société et adresse mail :
+            </p>
+
+            <table>
+                <thead>
+                    <tr>
+                        <th>Nom</th>
+                        <th>Code client</th>
+                        <th>Société</th>
+                        <th>Email</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Jean Deschamps</td>
+                        <td>DEAGE</td>
+                        <td>Délices d'Agen</td>
+                        <td class="email">delicesdag@hotmail.co</td>
+                    </tr>
+                    <tr>
+                        <td>Kevin Festhéo</td>
+                        <td>KEVIN</td>
+                        <td>Chez Kév</td>
+                        <td class="email">chezkev@hotmail.fr</td>
+                    </tr>
+                    <tr>
+                        <td>Melvia Santa</td>
+                        <td>MACHO</td>
+                        <td>La maison Chou</td>
+                        <td class="email">lamaisonch@orange.fr</td>
+                    </tr>
+                    <tr>
+                        <td>Matthieu Chev</td>
+                        <td>MAIPA</td>
+                        <td>La Maison dans le Parc</td>
+                        <td class="email">lamaisonchev@orange</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <p>
+                <strong>Code SQL : </strong>
+            <pre>
+                    SELECT Contact, Clientele.CodeClient, Clientele.Societe, MailCli
+                    FROM Clientele
+                    LEFT JOIN Commande ON Clientele.CodeClient = Commande.CodeClient
+                    WHERE Commande.CodeClient IS NULL;
+                    </pre>
+            </p>
+        </div>
+    </section>
+
+
+    <footer>
+        <div class="conteneur-footer">
+            <div class="logo">
+                <img src="../assets/logo/logo.png" alt="Kdou logo" width="160" height="110">
+            </div>
+            <p>Ce site internet est un compte rendu, au format page web, pour la ressource R1.02.
+                Il est basé sur la SAE 1.04, dans laquelle nous avions trois missions différentes où nous devions
+                analyser les bases de données de KDOU, à répondre aux questions posées et à réaliser un compte rendu de
+                chacune d’entre elles aux formats PDF et web, ainsi qu’un rapport sur la création de ce site internet.
+            </p>
+            <ul class="menu-footer">
+                <li><strong>Pages :</strong></li>
+                <li><a href="../index.html">Accueil</a></li>
+                <li><a href="mission_une.html">Mission 1</a></li>
+                <li><a href="mission_deux.html">Mission 2</a></li>
+                <li><a href="mission_trois.html">Mission 3</a></li>
+                <li><a href="bilan.html">Bilan</a></li>
+                <li><a href="rapport.html">Rapport Web</a></li>
+            </ul>
+        </div>
+    </footer>
+
+</body>
+
+</html>
