@@ -1,6 +1,6 @@
 <div align="center">
   <a href="https://kdou.free.nf">
-    <img src="https://upload.wikimedia.org/wikipedia/commons/4/4f/Globe_icon.png" alt="Logo" width="80" height="80">
+    <img src="https://kdou.free.nf/assets/logo/logo.png" alt="Logo" width="80" height="80">
   </a>
 
   <h3 align="center">kdou WebSite - SAE 1.04</h3>
@@ -53,7 +53,6 @@ Le travail a été réalisé dans le cadre de la première année de BUT Informa
 
 <img src="https://upload.wikimedia.org/wikipedia/commons/6/61/HTML5_logo_and_wordmark.svg" alt="HTML5" width="40" height="40">
 <img src="https://upload.wikimedia.org/wikipedia/commons/d/d5/CSS3_logo_and_wordmark.svg" alt="CSS3" width="40" height="40">
-<img src="https://upload.wikimedia.org/wikipedia/commons/6/6a/JavaScript-logo.png" alt="JS" width="40" height="40">
 <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/9a/Visual_Studio_Code_1.35_icon.svg/2048px-Visual_Studio_Code_1.35_icon.svg.png" alt="Logo VScode" width="40" height="40">
 
 ---
